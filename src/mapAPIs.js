@@ -1,10 +1,10 @@
 
 const app ={
     url:'https://api.foursquare.com/v2/venues/search',
-    location :'40.7243,-74.0018',
-    query : 'food',
+    location :'27.279717,33.821343',
+    query : 'hotel',
     limit : 10,
-    radius:2000,
+    radius:3000,
     v:20180323,
     id : '4TETLOO440V40H34OXK3T3ITK3XLNTSEIIOHPLQ2ZZUVFETH',
     key : 'E1FXU5525LJO01DMKJP4JQHKZEHP0GNKKGIVAMKPCF5LAGQI'
