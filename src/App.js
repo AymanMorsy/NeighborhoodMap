@@ -38,14 +38,16 @@ componentWillMount(){
 initMap = ()=>{
 console.log( 'loca',this.state.locations);
     const map = new window.google.maps.Map(document.getElementById('map'), {
-      
-      center: {lat: 40.7243, lng: -74.0018},
-      zoom: 14
+
+      center: {lat: 40.723, lng: -74.0018},
+      zoom: 16
     });
 
     let infowindow = new window.google.maps.InfoWindow()
+    let bounds = new window.google.maps.LatLngBounds();
         this.state.locations.map((coffee) => {
             const position = coffee.location
+            let myLatLng = new window.google.maps.LatLng(position.lat, position.lng)
             // Create Markers
             let marker = new window.google.maps.Marker({
                 position,
@@ -53,7 +55,7 @@ console.log( 'loca',this.state.locations);
                 animation: window.google.maps.Animation.DROP,
                 title: coffee.name
             })
-
+            bounds.extend(myLatLng);
             // Add each created marker to the 'markers' array
             this.state.markers.push(marker)
 
@@ -68,6 +70,7 @@ console.log( 'loca',this.state.locations);
                 }
             })
         })
+        map.fitBounds(bounds)
 }
 
 
