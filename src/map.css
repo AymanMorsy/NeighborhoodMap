@@ -7,8 +7,5 @@ body {
 }
 
 #map {
-  height: 100%;
-}
-.foo{
-    color:red;
+  height: 100vh;
 }
